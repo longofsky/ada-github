@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: local
+  redis:
+    redisson:
+      config: classpath:redisson-${spring.profiles.active}.yml

@@ -1,0 +1,27 @@
+
+mybatis:
+  mapper-locations: classpath*:/mapper/*.xml
+  type-aliases-package: classpath*:com.ada.news.dao.dto
+
+mapper:
+  mappers:
+    - com.ada.news.dao.base.AdaBaseMapper
+  identity: MYSQL # 取回主键的方式 MYSQL: SELECT LAST_INSERT_ID()
+  order: AFTER    # 还可设置为 mapper.before = false
+  not-empty: true # insertSelective 和 updateByPrimaryKeySelective 中，是否判断字符串类型 !=''
+  style: camelhumpAndLowercase # 实体和表转换时的默认规则:驼峰转下划线小写形式
+  enableMethodAnnotation: true # 是否支持（getter 和 setter）在方法上使用注解，默认false
+  enumAsSimpleType: true # 枚举类型当成基本类型对待
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: false
+  support-methods-arguments: true
+
+# mybatis sql日志
+logging:
+  level:
+    com:
+      example:
+        springbootmbg:
+          mapper: debug

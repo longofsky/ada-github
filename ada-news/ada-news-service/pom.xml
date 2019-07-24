@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ada.news</groupId>
+		<artifactId>ada-news</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>ada-news-service</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<description>ada push模块</description>
+
+	<properties>
+		<fst.version>2.57</fst.version>
+		<redisson-spring-boot-starter.version>3.9.1</redisson-spring-boot-starter.version>
+	</properties>
+
+	<dependencies>
+
+		<!--redisson-->
+		<dependency>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson-spring-boot-starter</artifactId>
+			<version>${redisson-spring-boot-starter.version}</version>
+		</dependency>
+
+		<!--解决redisson启动报错问题-->
+		<dependency>
+			<groupId>de.ruedigermoeller</groupId>
+			<artifactId>fst</artifactId>
+			<version>${fst.version}</version>
+		</dependency>
+
+        <!--mahout-->
+		<!--<dependency>-->
+			<!--<groupId>org.apache.mahout</groupId>-->
+			<!--<artifactId>mahout</artifactId>-->
+			<!--<version>0.13.0</version>-->
+		<!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.mahout</groupId>
+            <artifactId>mahout-examples</artifactId>
+            <version>0.13.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>jdk.tools</groupId>
+                    <artifactId>jdk.tools</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+		<dependency>
+			<groupId>com.ada.commons</groupId>
+			<artifactId>ada-common-vesta</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ada.cms</groupId>
+			<artifactId>ada-cms-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>redisson-spring-boot-starter</artifactId>
+					<groupId>org.redisson</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!--sms api、model 模块-->
+		<dependency>
+			<groupId>com.ada.news</groupId>
+			<artifactId>ada-news-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!--依赖dao-->
+		<dependency>
+			<groupId>com.ada.news</groupId>
+			<artifactId>ada-news-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+        <dependency>
+            <groupId>com.ada.commons</groupId>
+            <artifactId>ada-common-utils</artifactId>
+            <version>${ada-common-utils.version}</version>
+        </dependency>
+
+		<!--jsoup-->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.ansj/ansj_seg -->
+		<dependency>
+			<groupId>org.ansj</groupId>
+			<artifactId>ansj_seg</artifactId>
+			<version>5.0.3</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>com.huaban</groupId>
+			<artifactId>jieba-analysis</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+	</dependencies>
+
+
+</project>

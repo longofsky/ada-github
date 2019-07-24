@@ -1,0 +1,32 @@
+
+server:
+  port: 8880
+spring:
+  application:
+    name: ada-recommend-provider
+
+mybatis:
+  mapper-locations: classpath*:/com/ada/recommend/dao/mapper/*.xml
+  type-aliases-package: classpath*:com.ada.recommend.dao.dto
+
+# 加解密根密码
+jasypt:
+  encryptor:
+    password: adachina #根密码
+
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+info:
+  version: 0.0.1-SNAPSHOT
+  name: ada-recommend-provider
+  author: tiantian
+  gitlab: http://gitlab.ada-pz.com/arch2/ada-recommend
+  email: tiantian.li@adachina.com
+  phone: 15527248869
