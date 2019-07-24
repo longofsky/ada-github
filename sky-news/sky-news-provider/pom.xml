@@ -87,7 +87,7 @@
 
         <dependency>
             <groupId>com.sky.news</groupId>
-            <artifactId>ada-sky-service</artifactId>
+            <artifactId>sky-news-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
